@@ -18,6 +18,7 @@
     --dark-4: #251C14;
     --cream: #F2E8D5;
     --cream-dim: #D4C4A0;
+    --navy: #0D1B2A;
   }
 
   html, body {
@@ -68,16 +69,12 @@
     animation: fadeDown 0.8s ease both;
   }
   .ornament-line {
-    width: 60px;
-    height: 1px;
+    width: 60px; height: 1px;
     background: linear-gradient(90deg, transparent, var(--gold));
   }
-  .ornament-line.right {
-    background: linear-gradient(90deg, var(--gold), transparent);
-  }
+  .ornament-line.right { background: linear-gradient(90deg, var(--gold), transparent); }
   .ornament-diamond {
-    width: 6px;
-    height: 6px;
+    width: 6px; height: 6px;
     background: var(--gold);
     transform: rotate(45deg);
   }
@@ -104,11 +101,7 @@
     margin-bottom: 6px;
     animation: fadeDown 0.9s ease 0.15s both;
   }
-
-  h1 span {
-    color: var(--gold-light);
-    font-style: italic;
-  }
+  h1 span { color: var(--gold-light); font-style: italic; }
 
   .subtitle {
     font-family: 'Cormorant Garamond', serif;
@@ -118,25 +111,41 @@
     text-align: center;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-bottom: 32px;
+    margin-bottom: 8px;
     animation: fadeDown 0.9s ease 0.2s both;
   }
 
+  /* NEW: "By India's biggest developer" tag */
+  .developer-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(14px, 2.5vw, 18px);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-bottom: 36px;
+    animation: fadeDown 0.9s ease 0.25s both;
+  }
+
+  /* Event strip */
   .event-strip {
     display: flex;
     gap: 0;
     border: 1px solid rgba(201,168,76,0.3);
     border-radius: 2px;
     overflow: hidden;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
     animation: fadeDown 1s ease 0.3s both;
+    flex-wrap: wrap;
   }
   .event-detail {
-    padding: 14px 28px;
+    padding: 14px 24px;
     text-align: center;
     background: rgba(201,168,76,0.06);
     border-right: 1px solid rgba(201,168,76,0.2);
-    position: relative;
+    flex: 1;
+    min-width: 120px;
   }
   .event-detail:last-child { border-right: none; }
   .event-detail-label {
@@ -148,13 +157,111 @@
     margin-bottom: 5px;
   }
   .event-detail-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
     font-weight: 500;
     color: #fff;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
+    font-variant-numeric: lining-nums;
   }
 
+  /* NEW: Perks row (valet + brunch) — same style as benefits */
+  .perks-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 560px;
+  }
+  .perk-pill {
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+    max-width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .perk-icon {
+    font-size: 22px;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--gold);
+  }
+  .perk-text {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    line-height: 1.5;
+  }
+
+  /* NEW: Offer cards row */
+  .offers-row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 620px;
+    animation: fadeDown 1s ease 0.4s both;
+  }
+  .offer-card {
+    flex: 1;
+    min-width: 200px;
+    background: linear-gradient(135deg, var(--navy) 0%, #0a1520 100%);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 3px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .offer-icon-wrap {
+    width: 36px;
+    height: 36px;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 15px;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .offer-body {}
+  .offer-label {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .offer-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.35;
+  }
+  .offer-value strong {
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+  .offer-note {
+    font-size: 8.5px;
+    color: rgba(242,232,213,0.4);
+    letter-spacing: 0.05em;
+    margin-top: 3px;
+  }
+
+  /* Form card */
   .form-card {
     width: 100%;
     max-width: 560px;
@@ -163,35 +270,25 @@
     border-radius: 4px;
     padding: 48px 44px 44px;
     position: relative;
-    animation: fadeUp 1s ease 0.35s both;
+    animation: fadeUp 1s ease 0.45s both;
     box-shadow:
       0 0 0 1px rgba(201,168,76,0.05),
       0 40px 80px rgba(0,0,0,0.6),
       inset 0 1px 0 rgba(201,168,76,0.15);
   }
-
-  .form-card::before,
-  .form-card::after {
+  .form-card::before, .form-card::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 20px; height: 20px;
     border-color: var(--gold);
     border-style: solid;
   }
-  .form-card::before {
-    top: -1px; left: -1px;
-    border-width: 2px 0 0 2px;
-  }
-  .form-card::after {
-    bottom: -1px; right: -1px;
-    border-width: 0 2px 2px 0;
-  }
+  .form-card::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+  .form-card::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
 
   .pass-badge {
     position: absolute;
-    top: -14px;
-    left: 50%;
+    top: -14px; left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
     color: var(--dark);
@@ -213,7 +310,6 @@
     margin-bottom: 6px;
     letter-spacing: 0.02em;
   }
-
   .form-desc {
     font-size: 11px;
     font-weight: 400;
@@ -224,10 +320,7 @@
     margin-bottom: 36px;
   }
 
-  .field-group {
-    margin-bottom: 22px;
-  }
-
+  .field-group { margin-bottom: 22px; }
   .field-label {
     display: block;
     font-size: 9px;
@@ -237,7 +330,6 @@
     color: var(--gold);
     margin-bottom: 10px;
   }
-
   .field-input {
     width: 100%;
     background: rgba(255,255,255,0.04);
@@ -253,39 +345,18 @@
     transition: border-color 0.3s ease;
     letter-spacing: 0.02em;
   }
-
-  .field-input::placeholder {
-    color: rgba(242,232,213,0.25);
-    font-style: italic;
-  }
-
-  .field-input:focus {
-    border-bottom-color: var(--gold);
-    background: rgba(201,168,76,0.04);
-  }
-
+  .field-input::placeholder { color: rgba(242,232,213,0.25); font-style: italic; }
+  .field-input:focus { border-bottom-color: var(--gold); background: rgba(201,168,76,0.04); }
   .field-input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 100px var(--dark-3) inset;
     -webkit-text-fill-color: #fff;
   }
 
   .divider-ornament {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 32px 0;
+    display: flex; align-items: center; gap: 12px; margin: 32px 0;
   }
-  .do-line {
-    flex: 1;
-    height: 1px;
-    background: rgba(201,168,76,0.2);
-  }
-  .do-text {
-    font-size: 9px;
-    letter-spacing: 0.25em;
-    color: rgba(201,168,76,0.5);
-    text-transform: uppercase;
-  }
+  .do-line { flex: 1; height: 1px; background: rgba(201,168,76,0.2); }
+  .do-text { font-size: 9px; letter-spacing: 0.25em; color: rgba(201,168,76,0.5); text-transform: uppercase; }
 
   .submit-btn {
     width: 100%;
@@ -305,7 +376,6 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
     box-shadow: 0 4px 24px rgba(201,168,76,0.3);
   }
-
   .submit-btn::before {
     content: '';
     position: absolute;
@@ -314,18 +384,10 @@
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
     transition: left 0.5s ease;
   }
-
   .submit-btn:hover::before { left: 100%; }
-  .submit-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 32px rgba(201,168,76,0.45);
-  }
+  .submit-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 32px rgba(201,168,76,0.45); }
   .submit-btn:active { transform: translateY(0); }
-  .submit-btn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-    transform: none;
-  }
+  .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
   .btn-sub {
     display: block;
@@ -345,39 +407,25 @@
     line-height: 1.7;
   }
 
+  /* Benefits */
   .benefits {
     display: flex;
     gap: 24px;
-    margin-top: 48px;
+    margin-top: 32px;
+    margin-bottom: 16px;
     flex-wrap: wrap;
     justify-content: center;
-    animation: fadeUp 1s ease 0.5s both;
+    width: 100%;
+    max-width: 560px;
+    animation: fadeUp 1s ease 0.6s both;
   }
-  .benefit {
-    text-align: center;
-    flex: 1;
-    min-width: 120px;
-    max-width: 160px;
-  }
-  .benefit-icon {
-    font-size: 22px;
-    margin-bottom: 10px;
-    display: block;
-  }
+  .benefit { text-align: center; flex: 1; min-width: 120px; max-width: 160px; }
+  .benefit-icon { font-size: 22px; margin-bottom: 10px; display: block; }
   .benefit-title {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 5px;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 5px;
   }
-  .benefit-desc {
-    font-size: 10px;
-    color: rgba(242,232,213,0.45);
-    letter-spacing: 0.05em;
-    line-height: 1.6;
-  }
+  .benefit-desc { font-size: 10px; color: rgba(242,232,213,0.45); letter-spacing: 0.05em; line-height: 1.6; }
 
   /* THANK YOU STATE */
   .thank-you {
@@ -387,7 +435,6 @@
     text-align: center;
     animation: fadeUp 0.8s ease both;
   }
-
   .ty-card {
     background: linear-gradient(160deg, var(--dark-3) 0%, var(--dark-2) 100%);
     border: 1px solid rgba(201,168,76,0.25);
@@ -396,141 +443,61 @@
     position: relative;
     box-shadow: 0 40px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(201,168,76,0.15);
   }
-
-  .ty-card::before,
-  .ty-card::after {
+  .ty-card::before, .ty-card::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 20px; height: 20px;
     border-color: var(--gold);
     border-style: solid;
   }
   .ty-card::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
-  .ty-card::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+  .ty-card::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
 
   .ty-icon {
-    width: 64px;
-    height: 64px;
+    width: 64px; height: 64px;
     border: 1px solid var(--gold);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     margin: 0 auto 28px;
     position: relative;
   }
   .ty-icon::before {
-    content: '';
-    position: absolute;
-    inset: 4px;
-    border-radius: 50%;
+    content: ''; position: absolute; inset: 4px; border-radius: 50%;
     background: radial-gradient(circle, rgba(201,168,76,0.2), transparent);
   }
   .ty-checkmark { font-size: 26px; }
-
-  .ty-eyebrow {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.4em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
-  .ty-heading {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(32px, 6vw, 48px);
-    font-weight: 600;
-    color: #fff;
-    line-height: 1.1;
-    margin-bottom: 10px;
-  }
-  .ty-heading em {
-    color: var(--gold-light);
-    font-style: italic;
-  }
-
-  .ty-subhead {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    font-weight: 300;
-    color: var(--cream-dim);
-    margin-bottom: 32px;
-    letter-spacing: 0.05em;
-  }
-
-  .ty-divider {
-    width: 80px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin: 0 auto 32px;
-  }
-
-  .ty-details {
-    background: rgba(201,168,76,0.07);
-    border: 1px solid rgba(201,168,76,0.15);
-    border-radius: 2px;
-    padding: 24px;
-    margin-bottom: 28px;
-  }
-  .ty-detail-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(201,168,76,0.1);
-  }
+  .ty-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+  .ty-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 6vw, 48px); font-weight: 600; color: #fff; line-height: 1.1; margin-bottom: 10px; }
+  .ty-heading em { color: var(--gold-light); font-style: italic; }
+  .ty-subhead { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; color: var(--cream-dim); margin-bottom: 32px; letter-spacing: 0.05em; }
+  .ty-divider { width: 80px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 32px; }
+  .ty-details { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.15); border-radius: 2px; padding: 24px; margin-bottom: 28px; }
+  .ty-detail-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(201,168,76,0.1); }
   .ty-detail-row:last-child { border-bottom: none; }
-  .ty-detail-label {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    color: var(--gold);
-    text-transform: uppercase;
-  }
-  .ty-detail-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 16px;
-    color: #fff;
-  }
+  .ty-detail-label { font-size: 9px; font-weight: 700; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; }
+  .ty-detail-value { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: #fff; }
+  .ty-message { font-size: 12px; color: rgba(242,232,213,0.5); line-height: 1.8; letter-spacing: 0.05em; }
 
-  .ty-message {
-    font-size: 12px;
-    color: rgba(242,232,213,0.5);
-    line-height: 1.8;
-    letter-spacing: 0.05em;
-  }
-
+  /* Animations */
   @keyframes fadeDown {
     from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    to   { opacity: 1; transform: translateY(0); }
   }
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
-  .particles {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
-  }
+  .particles { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
   .particle {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: var(--gold);
-    border-radius: 50%;
-    opacity: 0;
+    position: absolute; width: 2px; height: 2px;
+    background: var(--gold); border-radius: 50%; opacity: 0;
     animation: float linear infinite;
   }
   @keyframes float {
-    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-    10% { opacity: 0.6; }
-    90% { opacity: 0.3; }
+    0%   { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10%  { opacity: 0.6; }
+    90%  { opacity: 0.3; }
     100% { transform: translateY(-10vh) translateX(40px); opacity: 0; }
   }
 
@@ -539,6 +506,9 @@
     .event-strip { flex-direction: column; }
     .event-detail { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); }
     .event-detail:last-child { border-bottom: none; }
+    .offers-row { flex-direction: column; }
+    .perks-row { flex-direction: column; }
+    .perk-pill { min-width: unset; }
   }
 </style>
 </head>
@@ -557,7 +527,9 @@
   <p class="eyebrow">By Invitation Only &nbsp;·&nbsp; NRI Exclusive</p>
   <h1>Luxury Indian<br><span>Real Estate Expo</span></h1>
   <p class="subtitle">Now in Dubai</p>
+  <p class="developer-tag">By India's Biggest Developer</p>
 
+  <!-- Event strip -->
   <div class="event-strip">
     <div class="event-detail">
       <div class="event-detail-label">Date</div>
@@ -573,6 +545,42 @@
     </div>
   </div>
 
+  <!-- Benefits -->
+  <div class="benefits" id="benefitsRow">
+    <div class="benefit">
+      <span class="benefit-icon">◈</span>
+      <div class="benefit-title">10% Spot Discount</div>
+      <div class="benefit-desc">Exclusive savings on booking at the expo</div>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">◆</span>
+      <div class="benefit-title">Premium Developer</div>
+      <div class="benefit-desc">50+ years of trust. 80M sqft delivered.</div>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">◇</span>
+      <div class="benefit-title">Free Flight Tickets</div>
+      <div class="benefit-desc">Round-trip on spot booking</div>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">◇</span>
+      <div class="benefit-title">Easy Payment Plan</div>
+      <div class="benefit-desc">20% down · 80% on handover</div>
+    </div>
+  </div>
+
+  <!-- Valet + Brunch perks -->
+  <div class="perks-row">
+    <div class="perk-pill">
+      <span class="perk-icon">◆</span>
+      <div class="perk-text">Complimentary<br>Valet Parking</div>
+    </div>
+    <div class="perk-pill">
+      <span class="perk-icon">◈</span>
+      <div class="perk-text">Brunch &amp; High<br>Tea Served</div>
+    </div>
+  </div>
+
   <!-- FORM STATE -->
   <div class="form-card" id="formState">
     <div class="pass-badge">✦ &nbsp; Priority Exclusive Pass &nbsp; ✦</div>
@@ -584,12 +592,10 @@
       <label class="field-label" for="fname">Full Name</label>
       <input class="field-input" type="text" id="fname" placeholder="Your full name" autocomplete="name">
     </div>
-
     <div class="field-group">
       <label class="field-label" for="femail">Email Address</label>
       <input class="field-input" type="email" id="femail" placeholder="your@email.com" autocomplete="email">
     </div>
-
     <div class="field-group">
       <label class="field-label" for="fphone">Phone Number</label>
       <input class="field-input" type="tel" id="fphone" placeholder="+971 XX XXX XXXX" autocomplete="tel">
@@ -612,9 +618,7 @@
   <!-- THANK YOU STATE -->
   <div class="thank-you" id="thankYouState">
     <div class="ty-card">
-      <div class="ty-icon">
-        <span class="ty-checkmark">✦</span>
-      </div>
+      <div class="ty-icon"><span class="ty-checkmark">✦</span></div>
       <p class="ty-eyebrow">Registration Confirmed</p>
       <h2 class="ty-heading">You're <em>In.</em></h2>
       <p class="ty-subhead">Your exclusive pass has been reserved.</p>
@@ -626,7 +630,7 @@
         </div>
         <div class="ty-detail-row">
           <span class="ty-detail-label">Date</span>
-          <span class="ty-detail-value">9th & 10th May, 2025</span>
+          <span class="ty-detail-value">9th &amp; 10th May, 2025</span>
         </div>
         <div class="ty-detail-row">
           <span class="ty-detail-label">Time</span>
@@ -640,6 +644,10 @@
           <span class="ty-detail-label">Pass Type</span>
           <span class="ty-detail-value">Priority Exclusive Pass ✦</span>
         </div>
+        <div class="ty-detail-row">
+          <span class="ty-detail-label">Includes</span>
+          <span class="ty-detail-value">Valet · Brunch · High Tea</span>
+        </div>
       </div>
       <p class="ty-message">
         A confirmation will be sent to you shortly.<br>
@@ -650,36 +658,14 @@
     </div>
   </div>
 
-  <!-- Benefits -->
-  <div class="benefits" id="benefitsRow">
-    <div class="benefit">
-      <span class="benefit-icon">◈</span>
-      <div class="benefit-title">Exclusive Properties</div>
-      <div class="benefit-desc">NRI-only access to premium Indian real estate</div>
-    </div>
-    <div class="benefit">
-      <span class="benefit-icon">◆</span>
-      <div class="benefit-title">Premium Developers</div>
-      <div class="benefit-desc">50+ years of trust. 80M sqft delivered.</div>
-    </div>
-    <div class="benefit">
-      <span class="benefit-icon">◇</span>
-      <div class="benefit-title">High ROI Opportunities</div>
-      <div class="benefit-desc">Currency advantage. Bank-approved projects.</div>
-    </div>
-  </div>
+
 
 </div>
 
 <script>
-  // ─── STEP 1: Paste your Google Apps Script Web App URL here ───────────────
-  // After deploying your Apps Script (see README instructions), replace the
-  // placeholder below with your actual URL. It looks like:
-  // https://script.google.com/macros/s/AKfy.../exec
   const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwp20g0qjqpyLJ47-YAwFB1aiePfwr1Q7lhtqJY_1haMjPI8GzfKhd1i2sp0xUnG9Um/exec';
-  // ──────────────────────────────────────────────────────────────────────────
 
-  // Floating particles
+  // Particles
   const container = document.getElementById('particles');
   for (let i = 0; i < 18; i++) {
     const p = document.createElement('div');
@@ -696,38 +682,30 @@
     const email = document.getElementById('femail').value.trim();
     const phone = document.getElementById('fphone').value.trim();
 
-    // Validation
-    if (!name)                      { shake('fname');  return; }
+    if (!name)                       { shake('fname');  return; }
     if (!email || !email.includes('@')) { shake('femail'); return; }
-    if (!phone)                     { shake('fphone'); return; }
+    if (!phone)                      { shake('fphone'); return; }
 
     const btn = document.getElementById('submitBtn');
     btn.disabled = true;
     btn.innerHTML = 'Reserving your pass…<span class="btn-sub">Please wait</span>';
 
-    // Send to Google Sheets
     try {
       await fetch(SHEET_URL, {
         method: 'POST',
-        mode: 'no-cors',   // required for Apps Script
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name,
-          email,
-          phone,
+          name, email, phone,
           timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Dubai' })
         })
       });
     } catch (err) {
-      // no-cors means we can't read the response — data still saves fine.
-      // Only a real network failure lands here.
       console.warn('Fetch error (non-critical):', err);
     }
 
-    // Show thank-you regardless (no-cors blocks response reading)
-    const formCard  = document.getElementById('formState');
-    const tyState   = document.getElementById('thankYouState');
-    const benefits  = document.getElementById('benefitsRow');
+    const formCard = document.getElementById('formState');
+    const tyState  = document.getElementById('thankYouState');
 
     formCard.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     formCard.style.opacity    = '0';
@@ -735,7 +713,6 @@
 
     setTimeout(() => {
       formCard.style.display  = 'none';
-      benefits.style.display  = 'none';
       tyState.style.display   = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 500);
